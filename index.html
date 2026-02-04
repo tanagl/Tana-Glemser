@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="bento-grid">
+        
+        <!-- 1. HERO (Top Left - Wide) -->
+        <div class="card hero">
+            <div class="card-header">
+                <span class="label">XR Developer</span>
+                <!-- <span class="status-badge">Available for work</span> -->
+            </div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Tana</span>.</h1>
+                <p>I build XR training applications with AI agents.</p>
+            </div>
+            <div class="button-row">
+                <a href="#" class="primary-btn">Download CV</a>
+                <a href="#" class="icon-btn">GH</a>
+                <a href="#" class="icon-btn">LI</a>
+            </div>
+        </div>
+
+        <!-- 2. CV / ABOUT (Right Side - Tall) -->
+        <div class="card cv-box">
+            <h3>Curriculum Vitae</h3>
+            
+            <div class="cv-section">
+                <p class="label">Experience</p>
+                <div class="cv-item">
+                    <h4>Research Assistant</h4>
+                    <p class="small-text">University of Trier • 2025 - Present</p>
+                </div>
+                <div class="cv-item">
+                    <h4>Co-founder</h4>
+                    <p class="small-text">Extended Minds (planned) • 2024 - 2025</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <p class="label">Skills</p>
+                <div class="tags">
+                    <span>VR Development: Unity, C#, Meta SDKs</span>
+                    <span>ML: Python, Jupyter Notebooks, OpenAI API</span>
+                    <span>3D Modeling: Blender</span>
+                    <span>Data Analysis: R, Pandas, NumPy</span>
+                    <span>Prototyping: Figma</span>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <p class="label">Education</p>
+                <div class="cv-item">
+                    <h4>B.Sc. Cognitive Science</h4>
+                    <p class="small-text">University of Tübingen</p>
+                </div>
+                <div class="cv-item">
+                    <h4>M.Sc. Human-Computer-Interaction</h4>
+                    <p class="small-text">University of Würzburg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. CONTACT (Bottom Left - Small) -->
+        <div class="card contact">
+            <h3>Contact</h3>
+            <p>Let's build something together.</p>
+            <a href="mailto:tana.glemser@gmail.com" class="link-arrow">hello@mysite.com ↗</a>
+            
+            <div class="mini-footer">
+                <p class="label">Location</p>
+                <p>Trier, Germany</p>
+            </div>
+        </div>
+
+    <!-- 4. PROJECTS -->
+    <div class="card projects">
+        <h3>Projects</h3>
+        <ul class="project-list">
+            <!-- Project 1: Links to the new file -->
+            <li>
+                <a href="extended-minds.html" style="text-decoration: none; color: inherit; display: flex; width: 100%; justify-content: space-between;">
+                    <span>Extended Minds</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </li>
+            <!-- Project 2 -->
+            <li>
+                <a href="#" style="text-decoration: none; color: inherit; display: flex; width: 100%; justify-content: space-between;">
+                    <span>E-commerce UI</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
