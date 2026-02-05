@@ -9,7 +9,7 @@
     --text-main: #1f2937;
     --text-muted: #6b7280; /* muted plum */
     --border: rgba(15,23,42,0.06); /* neutral translucent gray for crisper white cards */
-    --radius: 20px;
+    --radius: 12px;
     --primary: #4b2d86; /* deep lilac */
     --accent: #ff6a00; /* bright orange accent */
     --link-color: var(--primary);
@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     min-height: 100vh;
 }
 
@@ -35,9 +35,9 @@ body {
     width: 100%;
     /* 3 Columns */
     grid-template-columns: 1.2fr 1.2fr 1fr;
-    /* 2 Rows (Height defined by content) */
-    grid-template-rows: auto auto;
-    gap: 1.2rem;
+    /* 3 Rows with explicit heights */
+    grid-template-rows: auto auto auto auto;
+    gap: 0.8rem;
 }
 
 /* --- CARD BASE STYLES --- */
@@ -45,7 +45,7 @@ body {
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,7 +54,7 @@ body {
 
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04), 0 0 0 6px rgba(255,106,0,0.06);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02), 0 0 0 3px rgba(255,106,0,0.03);
     border-color: var(--accent);
 }
 
@@ -79,27 +79,39 @@ p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
 .hero {
     grid-column: 1 / 3; 
     grid-row: 1 / 2;
-    min-height: 300px;
+    min-height: 240px;
     justify-content: center;
 }
 
-/* 2. CV Box: Spans 1 column width (the right one), 2 rows height */
-.cv-box {
+/* 2. Projects Grid Box: Spans 1 column width (the right one), 3 rows height */
+.projects-grid-box {
     grid-column: 3 / 4;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
     background-color: var(--card-side); /* Slightly different white to distinguish */
 }
 
 /* 3. Contact: Bottom Left */
 .contact {
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
+    min-height: 120px;
+    justify-content: flex-start;
 }
 
-/* 4. Projects: Bottom Middle */
-.projects {
+/* 4. Placeholder Box: Bottom Middle */
+.more-box {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    min-height: 120px;
+    justify-content: flex-start !important;
+}
+
+/* 5. Another Placeholder Box: Third row middle (under More) */
+.fun-box {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    min-height: 60px;
+    justify-content: flex-start !important;
 }
 
 /* --- COMPONENT STYLES --- */
@@ -110,6 +122,28 @@ p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
     background: var(--status-bg); color: var(--status-text); 
     padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
 }
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex: 1;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    flex-shrink: 0;
+}
+
 .button-row { display: flex; gap: 10px; margin-top: 2rem; }
 .primary-btn {
     background: var(--primary); color: white; padding: 0.8rem 1.5rem;
@@ -117,11 +151,14 @@ p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
 }
 .primary-btn:hover { background: var(--accent); }
 .icon-btn {
-    width: 45px; height: 45px; border: 1px solid var(--border);
+    width: 45px; height: 45px; border: none;
     border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    text-decoration: none; color: var(--primary); font-weight: 700;
+    text-decoration: none; color: white; font-weight: 700;
+    background: var(--primary);
+    transition: background 0.2s;
 }
-.icon-btn:hover { background: var(--surface); }
+.icon-btn:hover { background: var(--accent); }
+.icon-btn svg { width: 24px; height: 24px; }
 
 /* CV Elements */
 .cv-section { margin-bottom: 1.5rem; border-bottom: 1px dashed var(--border); padding-bottom: 1rem; }
@@ -134,31 +171,57 @@ p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
     font-size: 0.75rem; color: var(--text-main);
 }
 
-/* Contact Elements */
+/* Contact and Placeholder Elements */
 .link-arrow {
     font-size: 1.1rem; color: var(--primary); text-decoration: none;
     font-weight: 600; margin: 1rem 0; display: block;
 }
 .mini-footer { margin-top: auto; padding-top: 1rem; }
 
-/* Projects Elements */
-.project-list { list-style: none; }
-.project-list li {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0.8rem 0; border-bottom: 1px solid var(--border);
-    cursor: pointer; transition: color 0.2s;
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
 }
-.project-list li:hover { color: var(--primary); }
-.project-list li:last-child { border-bottom: none; }
 
-/* Keep the smaller boxes from unnecessarily stretching — let them grow if content requires it */
-.contact, .projects {
-    align-self: start;
-    justify-content: flex-start; /* don't space items apart vertically */
-    overflow: auto; /* allow scrolling if content truly overflows */
-    background: var(--card-side);
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
     color: var(--text-main);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    aspect-ratio: 1 / 1;
 }
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card p {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .contact .mini-footer { margin-top: 1rem; }
 
 /* --- MOBILE --- */
@@ -201,7 +264,7 @@ p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
     max-width: 800px; /* Focus mode reading width */
     width: 100%;
     margin: 4rem auto; /* Center the container */
-    padding: 2.5rem 2rem; /* inner padding for the big card */
+    padding: 2rem 2rem; /* inner padding for the big card */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -361,4 +424,109 @@ p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
     .gallery-grid { grid-template-columns: 1fr; }
     .project-nav { top: 1rem; left: 1rem; }
     .project-container { margin-top: 3rem; }
+}
+
+/* --- CV PAGE STYLES --- */
+
+.cv-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+}
+
+.cv-page {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.04);
+}
+
+.cv-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+/* --- FOOTER STYLES --- */
+
+.site-footer {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* --- LEGAL PAGES STYLES (Impressum, Privacy) --- */
+
+.legal-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+}
+
+.legal-page {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.04);
+}
+
+.legal-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.legal-page h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.legal-page h3 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-main);
+}
+
+.legal-page p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.legal-page a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.legal-page a:hover {
+    text-decoration: underline;
 }

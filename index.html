@@ -18,53 +18,67 @@
                 <!-- <span class="status-badge">Available for work</span> -->
             </div>
             <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Tana</span>.</h1>
-                <p>I build XR training applications with AI agents.</p>
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="highlight">Tana</span>.</h1>
+                    <p>I build XR training applications with AI agents.</p>
+                </div>
+                <!-- <img src="images/profile.jpg" alt="Tana Glemser" class="hero-profile"> -->
             </div>
             <div class="button-row">
-                <a href="#" class="primary-btn">Download CV</a>
-                <a href="#" class="icon-btn">GH</a>
-                <a href="#" class="icon-btn">LI</a>
+                <a href="see-cv.html" class="primary-btn">See CV</a>
+                <a href="https://www.linkedin.com/in/tana-glemser-b946a7233" target="_blank" class="icon-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.733 0-9.637h3.554v1.365c.427-.659 1.191-1.595 2.897-1.595 2.117 0 3.704 1.385 3.704 4.362v5.505zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.704 0-.951.771-1.703 1.962-1.703 1.192 0 1.915.752 1.939 1.703 0 .946-.747 1.704-1.986 1.704zm1.581 11.597H3.635V9.815h3.283v10.637zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+                <a href="#" target="_blank" class="icon-btn" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
             </div>
         </div>
 
-        <!-- 2. CV / ABOUT (Right Side - Tall) -->
-        <div class="card cv-box">
-            <h3>Curriculum Vitae</h3>
-            
-            <div class="cv-section">
-                <p class="label">Experience</p>
-                <div class="cv-item">
-                    <h4>Research Assistant</h4>
-                    <p class="small-text">University of Trier • 2025 - Present</p>
-                </div>
-                <div class="cv-item">
-                    <h4>Co-founder</h4>
-                    <p class="small-text">Extended Minds (planned) • 2024 - 2025</p>
-                </div>
-            </div>
-
-            <div class="cv-section">
-                <p class="label">Skills</p>
-                <div class="tags">
-                    <span>VR Development: Unity, C#, Meta SDKs</span>
-                    <span>ML: Python, Jupyter Notebooks, OpenAI API</span>
-                    <span>3D Modeling: Blender</span>
-                    <span>Data Analysis: R, Pandas, NumPy</span>
-                    <span>Prototyping: Figma</span>
-                </div>
-            </div>
-
-            <div class="cv-section">
-                <p class="label">Education</p>
-                <div class="cv-item">
-                    <h4>B.Sc. Cognitive Science</h4>
-                    <p class="small-text">University of Tübingen</p>
-                </div>
-                <div class="cv-item">
-                    <h4>M.Sc. Human-Computer-Interaction</h4>
-                    <p class="small-text">University of Würzburg</p>
-                </div>
+        <!-- 2. PROJECTS (Right Side - Tall) -->
+        <div class="card projects-grid-box">
+            <h3>Projects</h3>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <a href="extended-minds.html" class="project-card">
+                    <img src="images/cc-jens.png" alt="Extended Minds">
+                    <p>Extended Minds</p>
+                </a>
+                <!-- Project 2 -->
+                <a href="project-CC4.html" class="project-card">
+                    <img src="images/video_screenshot.png" alt="Virtual Characters">
+                    <p>Virtual Characters</p>
+                </a>
+                <!-- Project 3 -->
+                <a href="project-master-thesis.html" class="project-card">
+                    <img src="images/MA-pov.png" alt="Automated Negotiation">
+                    <p>Automated Negotiation</p>
+                </a>
+                <!-- Project 4 -->
+                <a href="project-negotiation-multiuser.html" class="project-card">
+                    <img src="images/MA-pov.png" alt="VR Negotiation">
+                    <p>VR Negotiation</p>
+                </a>
+                                <!-- Project 5 -->
+                <a href="project.html" class="project-card">
+                    <img src="images/MA-pov.png" alt="VR Negotiation">
+                    <p>VR Project</p>
+                </a>
+                                <!-- Project 5 -->
+                <a href="project.html" class="project-card">
+                    <img src="images/MA-pov.png" alt="VR Negotiation">
+                    <p>VR Project</p>
+                </a>
+                    <!-- Project 6 -->
+                <a href="project.html" class="project-card">
+                    <img src="images/MA-pov.png" alt="VR Negotiation">
+                    <p>VR Project</p>
+                </a>
+                    <!-- Project 7 -->
+                <a href="project.html" class="project-card">
+                    <img src="images/MA-pov.png" alt="VR Negotiation">
+                    <p>VR Project</p>
+                </a>
             </div>
         </div>
 
@@ -72,37 +86,36 @@
         <div class="card contact">
             <h3>Contact</h3>
             <p>Let's build something together.</p>
-            <a href="mailto:tana.glemser@gmail.com" class="link-arrow">hello@mysite.com ↗</a>
-            
+            <a href="mailto:tana.glemser@gmail.com" class="link-arrow">hello@mysite.com ↗</a> 
             <div class="mini-footer">
                 <p class="label">Location</p>
                 <p>Trier, Germany</p>
             </div>
         </div>
 
-    <!-- 4. PROJECTS -->
-    <div class="card projects">
-        <h3>Projects</h3>
-        <ul class="project-list">
-            <!-- Project 1: Links to the new file -->
-            <li>
-                <a href="extended-minds.html" style="text-decoration: none; color: inherit; display: flex; width: 100%; justify-content: space-between;">
-                    <span>Extended Minds</span>
-                    <span class="arrow">↗</span>
-                </a>
-            </li>
-            <!-- Project 2 -->
-            <li>
-                <a href="#" style="text-decoration: none; color: inherit; display: flex; width: 100%; justify-content: space-between;">
-                    <span>E-commerce UI</span>
-                    <span class="arrow">↗</span>
-                </a>
-            </li>
-        </ul>
+    <!-- 4. EMPTY BOX (for future use) -->
+    <div class="card more-box">
+        <h3>Let's get virtual!</h3>
+        <p>Have a VR experience of my projects.</p>
+    </div>
+
+    <!-- 5. ANOTHER BOX (for future use) -->
+    <div class="card fun-box">
+        <h3>Favorite Project</h3>
+        <a href="project-master-thesis.html" style="text-decoration: none; color: inherit;"><p>Read more about this project. ↗</p></a>
     </div>
 
 
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Tana Glemser. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
