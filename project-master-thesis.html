@@ -19,35 +19,34 @@
     <main class="project-container">
         
         <!-- Project Banner -->
-        <div class="project-banner">
-            <img src="images/MA-pov.png" alt="Project banner" loading="lazy">
-        </div>
+
 
         <!-- Project Header -->
         <header class="project-header">
             <div class="header-top">
-                <span class="date-badge">Feb 2024</span>
-                <div class="links">
-                    <a href="#" target="_blank">Live Demo ↗</a>
-                    <a href="#" target="_blank">GitHub ↗</a>
-                </div>
+                <span class="date-badge">Feb 2024 - Jun 2024</span>
+                <!--
+                    <div class="links">
+                        <a href="#" target="_blank">Live Demo ↗</a>
+                        <a href="#" target="_blank">GitHub ↗</a>
+                    </div>
+                    -->
             </div>
             <h1>Negotiation Training in VR</h1>
-            <p class="project-intro">A contract negotiation training in fully immersive VR with an AI powered virtual human as automated negotiation partner. Based on my master's thesis and project in collaboration with trainers.</p>
+            <p class="project-intro">A contract negotiation training in fully immersive VR with an AI powered virtual human as automated negotiation partner. Developed and evaluated as part of my master's thesis.</p>
             
             <!-- Tech Stack Tags -->
             <div class="tags big-tags">
-                <span>React</span>
-                <span>Chart.js</span>
-                <span>Firebase</span>
-                <span>Tailwind CSS</span>
+                <span>Unity</span>
+                <span>OpenAI API</span>
+                <span>Meta Quest Pro</span>
+                <span>Microsoft Azure</span>
             </div>
         </header>
 
         <!-- Main Hero Image or Video -->
-        <div class="media-wrapper">
-            <!-- Replace 'src' with your image file name -->
-            <img src="https://via.placeholder.com/1200x600" alt="Project Hero Image" class="project-img">
+        <div class="project-banner">
+            <img src="images/MA-pov.png" alt="Project banner" loading="lazy">
         </div>
 
         <!-- Detailed Description -->
@@ -59,43 +58,52 @@
 
             <h3>The Solution</h3>
             <p>
-                From an existing negotiation training concept, I developed a fully immersive VR application using Unity and Meta Quest 3. The virtual human negotiation partner is powered by OpenAI's GPT models, enabling dynamic and context-aware conversations. The system incorporates speech recognition and text-to-speech technologies to facilitate natural interactions, allowing users to engage in realistic negotiation scenarios anytime, anywhere.
-            </p>
-            <h3>The Process</h3>
-            <p>
-                Development of conversation flows in collaboration with negotiation trainers. First evaluation as remote controlled multiuser application. Implementation of AI-driven dialogue using GPT models. Integration of speech recognition and TTS for immersive VR experience.
+                From an existing negotiation training concept (<a href="project-negotiation-multiuser.html">Multiuser Negotiation Training</a>), I developed a fully immersive VR application using Unity and Meta Quest Pro. The negotiation partner was connected to the GPT-4 model from OpenAI to generate responses for context-aware conversations, through the OkGoDoIt library <sup><a href="https://github.com/OkGoDoIt/OpenAI-API-dotnet" id="cite2">[2]</a></sup>. The system incorporates speech recognition and text-to-speech technologies from Microsoft Azure to facilitate natural interactions, allowing users to engage in realistic negotiation scenarios anytime, anywhere. Character models were created with Autodesk Character Generator. Animations are from Mixamo and lip-sync is realized with the SALSA LipSync Suite from CrazyMinnowStudio. Developed in Unity for the Meta Quest Pro.
             </p>
             <h3>The Evaluation</h3>
             <p>
-                Evaluation and master thesis study.
+                Evaluation and master thesis study (“Bot or Not: Exploring the Perceived Agency of an Embodied Artificial Intelligence in a Virtual Reality Negotiation Training”). The study explores the agency effect through framing of the negotiation agent as human-controlled or AI-controlled.
             </p>
         </section>
 
-        <!-- Video Embed Example (YouTube/Vimeo) -->
+        <!-- Video Embed Example (YouTube/Vimeo) 
         <section class="video-section">
             <h3>Walkthrough</h3>
             <div class="video-container">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </section>
+        -->
 
         <!-- Gallery / More Media -->
         <section class="project-gallery">
             <h3>Gallery</h3>
             <div class="gallery-grid">
                 <!-- Example: Image 1 -->
-                <img src="https://via.placeholder.com/600x400" alt="Mobile View" class="gallery-image">
+                <img src="images/agent01-crop.jpeg" alt="Agent View" class="gallery-image">
                 <!-- Example: Image 2 -->
-                <img src="https://via.placeholder.com/600x400" alt="Dark Mode View" class="gallery-image">
+                <img src="images/intro05.png" alt="Experiment View 1" class="gallery-image">
+                <!-- Example: Image 3 -->
+                <img src="images/exp08.png" alt="Experiment View 2" class="gallery-image">
             </div>
-            <style>
-                .gallery-image {
+            <style>.gallery-image {
                     width: 300px;
                     height: 300px;
                     object-fit: cover;
                 }
             </style>
         </section>
+
+        <!-- References 
+        <section class="project-references" style="font-size: 0.85rem; margin-top: 2rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">References</h3>
+            <p style="margin: 0;">
+                <span id="ref1">[1] Author Name. "Title of Article or Paper." 
+                <a href="https://example.com" target="_blank">Link ↗</a>
+                <a href="#cite1">↩</a></span>
+            </p>
+        </section>
+        -->
 
     </main>
 
